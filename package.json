@@ -1,0 +1,17 @@
+{
+  "name": "library-tailwind",
+  "version": "1.0.0",
+  "description": "Week 10 assignment",
+  "main": "./lib/index.js",
+  "author": "mesel ghea",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.2.7"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": ""
+  }
+}
