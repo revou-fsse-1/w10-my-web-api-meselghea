@@ -4,6 +4,7 @@ import config from "../../config.json";
 import axios from "axios";
 import "./Posts.css";
 
+
 const Posts = () => {
   const navigate = useNavigate();
   const [posts, setPosts] = useState([]);
@@ -18,8 +19,9 @@ const Posts = () => {
   }, []);
 
   const handleDelete = async (post) => {
-    setPosts(posts.filter((p) => p._id !== post._id));
-    await axios.delete(`${config.apiUrl}/posts${post._id}`);
+    const myJSON = JSON.stringify(post);
+    setPosts(posts.filter((p) => p.id !== post.id));
+    await axios.delete(`${config.apiUrl}/posts/${post.id}`);
   };
 
   return (
@@ -47,7 +49,7 @@ const Posts = () => {
                 <td> {post.content} </td>
                 <td>
                   <button
-                    onClick={() => navigate(`/post/${post._id}`)}
+                    onClick={() => navigate(`/post/${post.id}`)}
                     className="btn btn-primary"
                   >
                     Update
@@ -65,6 +67,11 @@ const Posts = () => {
             ))}
           </tbody>
         </table>
+      <div>
+      <a href="./users/login">
+        <button className="btn btn-secondary">Logout</button>
+      </a>
+    </div>
       </div>
     </div>
   );
