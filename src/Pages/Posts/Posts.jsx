@@ -18,9 +18,8 @@ const Posts = () => {
   }, []);
 
   const handleDelete = async (post) => {
-    const myJSON = JSON.stringify(post);
-    setPosts(posts.filter((p) => p.id !== post.id));
-    await axios.delete(`${config.apiUrl}/posts/${post.id}`);
+    setPosts(posts.filter((p) => p._id !== post._id));
+    await axios.delete(`${config.apiUrl}/posts${post._id}`);
   };
 
   return (
@@ -48,7 +47,7 @@ const Posts = () => {
                 <td> {post.content} </td>
                 <td>
                   <button
-                    onClick={() => navigate(`/post/${post.id}`)}
+                    onClick={() => navigate(`/post/${post._id}`)}
                     className="btn btn-primary"
                   >
                     Update

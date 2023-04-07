@@ -11,6 +11,15 @@ const Post = () => {
     content: "",
   });
 
+  useEffect(() => {
+    if (!id) return;
+    const fetchPost = async () => {
+      const { data } = await axios.get(`${config.apiUrl}/posts`);
+      setPost(data);
+    }
+    fetchPost();
+  }, []);
+
   const handleChange = (e) => {
     const postClone = { ...post };
     postClone[e.target.name] = e.target.value;
@@ -20,12 +29,13 @@ const Post = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(post);
+    const myJSON = JSON.stringify(post);
     if (id === "new") {
-      await axios.post(`${config.apiUrl}/posts`, post);
+      await axios.post(`${config.apiUrl}/posts`, myJSON);
       return navigate("/");
     } else {
-      await axios.put(`${config.apiUrl}/posts/${id}`, post);
-      return navigate("/");
+      await axios.put(`${config.apiUrl}/posts/${id}`, myJSON);
+      return navigate("/index.js");
     }
   };
 
