@@ -1,3 +1,6 @@
+
+ 
+
 import config from "../../config.json";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -10,6 +13,16 @@ const Post = () => {
     title: "",
     content: "",
   });
+  const fetchPost = async () => {
+    console.log(post)
+    console.log(id)
+    const res = await axios.get(`${config.apiUrl}/posts/${id}`)
+  setPost(res.data);
+  };
+
+useEffect(()=> {
+  fetchPost();
+}, []);
 
   const handleChange = (e) => {
     const postClone = { ...post };

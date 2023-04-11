@@ -1,14 +1,23 @@
 {
-  "posts": [
+  "users": [
     {
-      "title": "coba",
-      "content": "disini",
-      "id": 3
+      "id": 1,
+      "user": "Admin",
+      "email": "admin23@gmail.com",
+      "pwd": "Ad123min"
     },
     {
-      "title": "disini",
-      "content": "aja",
-      "id": 4
+      "user": "ghea",
+      "email": "ghea@gmail.com",
+      "pwd": "Mesgel09@",
+      "id": 2
+    }
+  ],
+  "posts": [
+    {
+      "title": "Coba ",
+      "content": "Cek di sini!",
+      "id": 1
     }
   ]
 }

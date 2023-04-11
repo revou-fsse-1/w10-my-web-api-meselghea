@@ -68,7 +68,7 @@ const Posts = () => {
           </tbody>
         </table>
       <div>
-      <a href="./users/login">
+      <a onClick={()=>navigate("/")}>
         <button className="btn btn-secondary">Logout</button>
       </a>
     </div>
