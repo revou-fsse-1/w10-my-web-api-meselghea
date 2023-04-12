@@ -101,7 +101,7 @@ const Register = () => {
                 <div className="containe">
                     <h1>Success!</h1>
                     <p>
-                        <button onClick={()=>navigate("/")}>Sign In</button>
+                        <a className="line" onClick={()=>navigate("/")}>Sign In</a>
                     </p>
                 </div>
                 </div>
@@ -207,10 +207,10 @@ const Register = () => {
                         <button disabled={!validName || !validEmail || !validPwd || !validMatch ? true : false}>Sign Up</button>
                     </form>
                     <p>
-                        Already registered?<br />
+                        Already registered?
                         <span>
                             {/* router link here*/}
-                            <a  className="line" onClick={()=>navigate("/")}>Sign In</a>
+                            <a  className="line"  onClick={()=>navigate("/")}>Sign In</a>
                         </span>
                     </p>
                 </div>

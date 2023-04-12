@@ -51,8 +51,8 @@ const Login = () => {
                 <div className="container">
                         <h1>You are logged in!</h1>
                         <br />
-                        <p id="goto">
-                            <a onClick={()=>navigate("/Posts")}>Go to Home</a>
+                        <p className="goto">
+                            <a className="line" onClick={()=>navigate("/Posts")}>Go to Home</a>
                         </p>
                     </div>
                 </div>
@@ -88,7 +88,7 @@ const Login = () => {
                             Need an Account?
                             <span className="line">
                                 {/*put router link here*/}
-                                <div onClick={()=>navigate("/Register")}>Sign Up</div>
+                                <a className="goto" onClick={()=>navigate("/Register")}>Sign Up</a>
                             </span>
                         </p>
                 </div>
